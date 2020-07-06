@@ -71,7 +71,7 @@ extension UIViewController {
         let semiViewFrame = CGRect(x: 0, y: targetView.height - semiViewHeight, width: targetView.width, height: semiViewHeight)
         
         let overlay = overlayView()
-        overlay.alph = 0.05
+        overlay.alpha = 0.05
         targetView.addSubview(overlay)
         
         let screenshot = addOrUpdateParentScreenshotInView(overlay)
