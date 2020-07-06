@@ -71,13 +71,14 @@ extension UIViewController {
         let semiViewFrame = CGRect(x: 0, y: targetView.height - semiViewHeight, width: targetView.width, height: semiViewHeight)
         
         let overlay = overlayView()
+        overlay.alph = 0.05
         targetView.addSubview(overlay)
         
         let screenshot = addOrUpdateParentScreenshotInView(overlay)
         
         let duration = optionForKey(.animationDuration) as! TimeInterval
         UIView.animate(withDuration: duration, animations: { 
-            screenshot.alpha = CGFloat(self.optionForKey(.parentAlpha) as! Double)
+            screenshot.alpha = 0 //CGFloat(self.optionForKey(.parentAlpha) as! Double)
         }) 
         
         let transitionStyle = optionForKey(.transitionStyle) as! SemiModalTransitionStyle
